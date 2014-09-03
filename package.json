@@ -1,0 +1,9 @@
+{
+  "name": "rfc-link",
+  "title": "rfc-link",
+  "id": "jid1-LaBjdzDivQwJkQ",
+  "description": "Open RFC's from their text-based references",
+  "author": "BigBlueHat <byoung@bigbluehat.com>",
+  "license": "MIT",
+  "version": "0.1.0"
+}
