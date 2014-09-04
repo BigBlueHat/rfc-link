@@ -8,12 +8,14 @@
 function collectRFCs(text) {
   var rfc_rex = /RFC\W*([1-9][0-9]{0,3})/gi
   var match;
-  var rv = [];
+  var rfcs = [];
 
   while ((match = rfc_rex.exec(text)) != null) {
-    rv.push(match[1]);
+    if (rfcs.indexOf(match[1]) === -1) {
+      rfcs.push(match[1]);
+    }
   }
-  return rv;
+  return rfcs;
 }
 
 self.on("context", function () {
@@ -24,5 +26,5 @@ self.on("context", function () {
   for (var i = 0; i < rfcs.length; i++) {
     self.postMessage(rfcs[i]);
   }
-  return rv.length > 0;
+  return rfcs.length > 0;
 });
